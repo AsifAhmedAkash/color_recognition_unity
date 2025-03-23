@@ -24,6 +24,7 @@ public class PixelsHandler : MonoBehaviour
     private string prediction;
     public Color newColor;
     [SerializeField] private PredictionOutputBox predictionOutputBox;
+    [SerializeField] private RunMLP runMlp;
     
     private void Start()
     {
@@ -71,6 +72,11 @@ public class PixelsHandler : MonoBehaviour
     
     private void Predict()
     {
+        
+
+        runMlp.predict_new_color(ReadPixels());
+
+        /*
         var input = ReadPixels();
         
         client.Predict(input, output =>
@@ -83,6 +89,8 @@ public class PixelsHandler : MonoBehaviour
 
             //Debug.Log("Output: " + string.Join(", ", output));
             //
+
+             old colors
             var outputMax = output.Max();
             var maxIndex = Array.IndexOf(output, outputMax);
             ///
@@ -100,6 +108,8 @@ public class PixelsHandler : MonoBehaviour
             predictionOutputBox.red = firstPart;
             predictionOutputBox.green = middlePart;
             predictionOutputBox.blue = lastPart;
+
+            
             //newColor = new Color(float.Parse(firstPart, CultureInfo.InvariantCulture.NumberFormat), float.Parse(middlePart, CultureInfo.InvariantCulture.NumberFormat), float.Parse(lastPart, CultureInfo.InvariantCulture.NumberFormat));
 
             //renderer.material.color = newColor;
@@ -108,6 +118,7 @@ public class PixelsHandler : MonoBehaviour
         {
             // TODO: when i am not lazy
         });
+            */
     }
 
     [SerializeField] ColorThief colorTheif;
