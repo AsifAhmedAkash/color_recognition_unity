@@ -68,9 +68,10 @@ public class RunMLP : MonoBehaviour
         Debug.Log("RGB Output: [" + red + ", " + green + ", " + blue + "]");
 
         // Clamp values to avoid issues
-        red = Mathf.Clamp01(red);
-        green = Mathf.Clamp01(green);
-        blue = Mathf.Clamp01(blue);
+        red = red / 255f;
+        green = green / 255f;
+        blue = blue / 255f;
+
 
         // Apply color to material
         Color newColor = new Color(red, green, blue, 1.0f);
