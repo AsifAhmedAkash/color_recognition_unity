@@ -59,10 +59,10 @@ public class PredictionOutputBox : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= 1.0f)//change the float value here to change how long it takes to switch.
             {
-                Debug.Log("rgb " + red + " " + green + " " + blue);
-                Debug.Log("red float " + float.Parse(red));
+                //Debug.Log("rgb " + red + " " + green + " " + blue);
+                //Debug.Log("red float " + float.Parse(red));
                 newColor = new Color(float.Parse(red)/255, float.Parse(green)/255, float.Parse(blue)/255, 1);
-                Debug.Log("render mat " + newColor);
+                //Debug.Log("render mat " + newColor);
                 renderer.material.color = newColor;
                 
 
